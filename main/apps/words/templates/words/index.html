@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'words/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+  <body>
+    <div id="wrapper">
+        
+        <form action='/session_words/process' method='post' id='addnew'>
+            {% csrf_token %}
+            <h1>Add a New Word</h1>
+            <input type='text' name='name'>
+            <h3>Choose Color</h3>
+            <input type='radio' name='color' value='red' checked>RED<br>
+            <input type='radio' name='color' value='green' checked>GREEN<br>
+            <input type='radio' name='color' value='blue' checked>BLUE<br> 
+            <input type='checkbox' name='checkbox' value='big'>Show in BIG FONT
+            <input type='submit'>
+        </form>
+          <a id='clear 'href='/clear' name='clear'>Clear Session</a>
+            <div class='word'>
+              {% for word_dict in request.session.words %}
+                {% if word_dict.fontsize == 'big'%}
+                  <h1 id='{{word_dict.colors}}'> {{word_dict.words}}</h1>
+                  <p> {{word_dict.date}}</p>
+                {% else %}
+                  <p id='{{word_dict.colors}}'> {{word_dict.words}}</p>
+                  <p> {{word_dict.date}}</p>
+                {% endif %}
+              {% endfor %}
+            
+            </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+#wrapper{
+    width: 1200px;
+    height: 800px;
+    background: linear-gradient(rgb(255, 255, 255),rgb(107, 36, 44))
+}
+form{
+    margin: 5px;
+    display: inline-block;
+}
+#addnew{    
+    display: inline-block;
+    text-align: left;
+}
+.word{
+    position: relative;
+    display: inline-block;
+    width: 350px;
+    left: 100px;
+    vertical-align: top;  
+}
+#date{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    left: 250px;
+    vertical-align: top;
+    
+ 
+}
+#clear{
+    position: absolute;
+    right: 666px;
+}
+#red{
+    color: red;
+}
+#green{
+    color: green;
+}
+#blue{
+    color:blue;
+}
+.small{
+    font-size: 20px;
+}
+.big{
+    font-size: 40px;
+}
+p{
+    display: inline-block;
+    margin-left: 10px;
+}
+h1{
+    display: inline-block;
+}
